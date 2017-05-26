@@ -1,0 +1,6 @@
+<h1>Here are your Artists!</h1>
+<p>Click on an Artist to see their CDs.</p>
+@foreach (var artist in Model)
+{
+  <h3><a href='/ViewArtists/@artist.GetId()'>@artist.GetName()</a></h3>
+}
