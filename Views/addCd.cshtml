@@ -1,0 +1,5 @@
+<h1>Choose an artist to add a CD to their name.</h1>
+@foreach (var artist in Model)
+{
+  <h3><a href='/ViewArtists/@artist.GetId()'>@artist.GetName()</a></h3>
+}
