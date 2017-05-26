@@ -36,5 +36,8 @@ namespace Organizer.Objects
     {
       return _instances[searchId-1];
     }
+    public void AddCD(CD cd){
+      _CDs.Add(cd);
+    }
   }
 }

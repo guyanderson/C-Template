@@ -31,6 +31,16 @@ namespace Organizer.Modules
         viewModel.Add("CDs", ArtistCD);
         return View["artistDetailPage",viewModel];
       };
+      Post["/AddCD/{id}"] = parameters => {
+        Dictionary<string, object> viewModel = new Dictionary<string, object>();
+        CD newCD = new CD(Request.Form["CD-name"]);
+        Artist artist = Artist.Find(parameters.Id);
+        artist.AddCD(newCD);
+        List<CD> ArtistCD = artist.GetCDs();
+        viewModel.Add("Artist", artist);
+        viewModel.Add("CDs", ArtistCD);
+        return View["artistDetailPage",viewModel];
+      };
     }
   }
 }

@@ -1,4 +1,4 @@
-<h1>Here are your Artist's CDs.</h1>
+<h1>Add a CD to your Artist.</h1>
 <h3>@Model["Artist"].GetName()</h3>
 <ol>
 @foreach (var cd in Model["CDs"])
@@ -6,3 +6,8 @@
   <li>@cd.GetName()</li>
 }
 </ol>
+<form action='/AddCd/@Model["Artist"].GetId()' method='post'>
+  <label for="CD-name">New CD name</label>
+  <input id="CD-name" name="CD-name" type="text">
+  <button type='submit'>Add CD</button>
+</form>
