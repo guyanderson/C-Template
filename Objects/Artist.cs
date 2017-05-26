@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-// using Organizer.CDs;
 
 namespace Organizer.Objects
 {
@@ -8,14 +7,14 @@ namespace Organizer.Objects
     private static List<Artist> _instances = new List<Artist> {};
     private string _name;
     private int _id;
-    // private List<CDs> _CDs;
+    private List<CD> _CDs;
 
     public Artist(string artistName)
     {
       _name = artistName;
       _instances.Add(this);
       _id = _instances.Count;
-      // _CDs = new List<CDs>{};
+      _CDs = new List<CD>{};
     }
     public string GetName()
     {
@@ -28,6 +27,14 @@ namespace Organizer.Objects
     public static List<Artist>GetAll()
     {
       return _instances;
+    }
+    public List<CD> GetCDs()
+    {
+      return _CDs;
+    }
+    public static Artist Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }

@@ -1,0 +1,8 @@
+<h1>Here are your Artist's CDs.</h1>
+<h3>@Model["Artist"].GetName()</h3>
+<ol>
+@foreach (var cd in Model["CDs"])
+{
+  <li>@cd.GetName()</li>
+}
+</ol>
